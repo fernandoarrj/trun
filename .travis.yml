@@ -5,10 +5,8 @@ matrix:
         - "3.6"
       before_script:
         - pip install docker-compose
-      before_install:
-        - cd backend/trun
       script:
-        - python manage.py test
+        - docker-compose run backend sh -c "python manage.py test"
       services:
         docker
 
