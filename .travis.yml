@@ -3,8 +3,10 @@ matrix:
     - language: python
       python:
         - "3.6"
-      install:
+      before_script:
         - pip install docker-compose
+      before_install:
+        - cd backend/trun
       script:
         - python manage.py test
       services:
